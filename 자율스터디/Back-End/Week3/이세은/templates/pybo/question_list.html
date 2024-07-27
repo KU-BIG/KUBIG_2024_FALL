@@ -1,0 +1,85 @@
+<!-- base.html 템플릿 파일을 상속받음 -->
+{% extends 'base.html' %}
+{% load pybo_filter %}
+{% block content %}
+
+<!-- 가운데 정렬, margin 상하 값을 추가 -->
+<div class="container my-3">
+    <table class="table">
+        <thead>
+            <tr class="thead-dark">
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일시</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if question_list %}
+                {% for question in question_list %}
+                    <tr>
+                        <!-- 일련번호: 전체 게시물 개수 - 시작 인덱스 - 현재 인덱스(0부터 1씩 증가) + 1 -->
+                        <td>{{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}</td>
+                        <td>
+                            <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
+                        </td>
+                        <td>{{ question.create_date }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">질문이 없습니다.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <!-- 페이징 처리 시작 -->
+    <ul class="pagination justify-content-center">
+        <!-- 이전 페이지가 있으면 '이전' 링크 활성화. 이전 페이지가 없으면 '이전' 링크 비활성화. -->
+        {% if question_list.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ question_list.previous_page_number }}">이전</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+            </li>
+        {% endif %}
+
+        <!-- 페이지 리스트 -->
+        {% for page_number in question_list.paginator.page_range %}
+            <!-- 페이지 번호가 현재 페이지 기준으로 좌우 5개씩 보임 -->
+            {% if page_number >= question_list.number|add:-5 and page_number <= question_list.number|add:5 %}
+                <!-- 현재 페이지 번호는 active 클래스로 강조 표시 -->
+                {% if page_number == question_list.number %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        <!-- 다음 페이지가 있으면 '다음' 링크 활성화. 다음 페이지가 없으면 '다음' 링크 비활성화. -->
+        {% if question_list.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ question_list.next_page_number }}">다음</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+            </li>
+        {% endif %}
+    </ul>
+    <!-- 페이징 처리 끝 -->
+
+    <!-- 질문 등록 버튼 추가 -->
+    <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">
+        질문 등록하기
+    </a>
+</div>
+
+{% endblock %}
