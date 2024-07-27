@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load pybo_filter %}
+{% block content %}
+<div class="container my-3">
+  <table class="table">
+    <thead>
+      <tr class="thead-dark">
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성일시</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if question_list %}
+        {% for question in question_list %}
+        <tr>
+            <td>
+                <!-- 번호 - 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
+                {{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}
+            </td>
+            <td>
+            <a href="{% url 'pybo:detail' question.id %}">
+                {{ question.subject}}
+            </a>
+            </td>
+            <td>{{ question.create_date }}</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+      <tr>
+        <td colspan="3">질문이 없습니다.</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+  <!-- 페이징 처리 시작 -->
+  <ul class="pagination justify-content-center">
+    <!-- 이전 페이지 -->
+    {% if question_list.has_previous %} <!-- question_list = page_obj -->
+    <li class="page-item fw-bold"> <!-- fw-bold 추가 -->
+      <a
+        class="page-link"
+        href="?page={{ question_list.previous_page_number }}"
+      >
+        <
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled fw-bold">
+      <a class="page-link" tabindex="-1" aria-disabled="true" href="#">
+        <
+      </a>
+    </li>
+    {% endif %}
+    <!-- 페이지 리스트 -->
+    {% for page_number in question_list.paginator.page_range %}
+        {% if question_list.number <= 5 %} <!-- 현재 페이지 번호가 5보다 작으면 -->
+            {% if page_number <= 9 %} <!-- 페이지 번호가 9개씩 보이도록 -->
+                {% if page_number == question_list.number %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="?page={{ page_number }}">
+                        {{ page_number }}
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_number }}">
+                        {{ page_number }}
+                    </a>
+                </li>
+                {% endif %}
+            {% endif %}
+        {% elif question_list.number > question_list.paginator.num_pages|add:-5 %} <!-- 현재 페이지 번호가 (전체페이지수-5) 보다 크면 -->
+            {% if page_number > question_list.paginator.num_pages|add:-9 %}
+                {% if page_number == question_list.number %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="?page={{ page_number }}">
+                        {{ page_number }}
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_number }}">
+                        {{ page_number }}
+                    </a>
+                </li>
+                {% endif %}
+            {% endif %}
+        {% else %} <!-- 현재 페이지 번호가 5 이상, (전체페이지수-5) 이하 -->
+            {% if page_number >= question_list.number|add:-4 and page_number <= question_list.number|add:4 %}
+                {% if page_number == question_list.number %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="?page={{ page_number }}">
+                        {{ page_number }}
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_number }}">
+                        {{ page_number }}
+                    </a>
+                </li>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    <!-- 다음 페이지 -->
+    {% if question_list.has_next %}
+    <li class="page-item fw-bold">
+      <a class="page-link" href="?page={{ question_list.next_page_number }}">
+        >
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled fw-bold">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">
+            >
+        </a>
+    </li>
+    {% endif %}
+  </ul>
+  <!-- 페이징 처리 끝 -->
+
+  <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">
+    질문 등록하기
+  </a>
+</div>
+{% endblock %}
