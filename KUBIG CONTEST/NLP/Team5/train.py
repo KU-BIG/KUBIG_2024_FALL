@@ -69,7 +69,6 @@ def setup_llm_pipeline(fine_tune=False, training_data=None):
     return hf, model, tokenizer
 
 
-# training_data 생성
 training_data = []
 
 for _, row in df.iterrows():
@@ -79,12 +78,5 @@ for _, row in df.iterrows():
     text = f"질문: {question}\n답변: {answer}"
     training_data.append(text)
 
-# LLM 파이프라인
+
 llm, model, tokenizer = setup_llm_pipeline(fine_tune=True, training_data=training_data)
-
-# 저장할 경로 설정
-save_directory = "/content/drive/MyDrive"
-
-# 모델과 토크나이저 저장
-model.save_pretrained(save_directory)
-tokenizer.save_pretrained(save_directory)
