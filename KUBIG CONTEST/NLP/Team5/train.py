@@ -92,7 +92,7 @@ for _, row in df.iterrows():
 llm, model, tokenizer = setup_llm_pipeline(fine_tune=True, training_data=training_data)
 
 # 저장할 경로 설정
-save_directory = "/content/drive/MyDrive/시험판?/코젬마 튜닝"
+save_directory = "/content/drive/MyDrive"
 
 # 모델과 토크나이저 저장
 model.save_pretrained(save_directory)
