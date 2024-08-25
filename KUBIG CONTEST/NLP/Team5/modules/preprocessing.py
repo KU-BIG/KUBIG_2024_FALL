@@ -1,4 +1,3 @@
-
 def extract_pdf_elements(pdf_file_name):
   return partition_pdf (filename=pdf_file_name,
                         #chunking_strategy = "by_title",
