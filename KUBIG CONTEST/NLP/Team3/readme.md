@@ -27,7 +27,7 @@
 
 ## Results
 
-![image](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/main/KUBIG%20CONTEST/NLP/Team3/chat.png)
+![image](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/main/KUBIG%20CONTEST/NLP/Team3/image/chat.png)
 
 * 평가
   - 대체적으로 사람 수준의 공감능력, 대화 문맥 유지, 이모티콘으로 감정적 몰입 부여
