@@ -10,6 +10,6 @@
 
 ## Results
 Private f1 score: 0.6809 (28th)
-![image](https://github.com/user-attachments/assets/03debc6a-11d3-40ec-8a4e-7e4c151262ec)
+![image](https://github.com/user-attachments/assets/09c74a73-21c7-4b12-a1c8-1d74867c5aee)
 
 ## Structure
