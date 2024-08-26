@@ -60,6 +60,7 @@ python detect.py --source path/to/your/images --weights weights/yolov10.pt
 
 Your dataset should be in the YOLO format (with .txt annotation files for each image, where each line represents an object in the format [class_id, x_center, y_center, width, height] normalized between 0 and 1).
 Organize your dataset into the following directory structure:
+
 ```kotlin
 dataset/
 ├── train/
@@ -104,7 +105,8 @@ Our Result is in yolov10\runs\detect\predict7.
 
 # License
 
-Distributed under the MIT License. See LICENSE for more information.
+[Distributed under the MIT License. See LICENSE for more information.](https://github.com/AarohiSingla/YOLOv10-Custom-Object-Detection.git)
+[YOLOv10: Real-Time End-to-End Object Detection](https://arxiv.org/pdf/2405.14458)
 
 # Acknowledgments
 
