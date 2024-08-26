@@ -112,7 +112,7 @@ Our Result is in yolov10\runs\detect\predict7.
 
 # License
 
-[Distributed under the MIT License. See LICENSE for more information.](https://github.com/AarohiSingla/YOLOv10-Custom-Object-Detection.git)
+[Aarohi Singla](https://github.com/AarohiSingla/YOLOv10-Custom-Object-Detection.git)
 [YOLOv10: Real-Time End-to-End Object Detection](https://arxiv.org/pdf/2405.14458)
 
 # Acknowledgments
