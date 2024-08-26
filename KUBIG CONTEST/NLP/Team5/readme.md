@@ -6,14 +6,12 @@
 19기 이동주, 20기 강민정, 이유진
 
 ## Flow Chart
-![image](https://github.com/user-attachments/assets/a2a03235-8592-4942-843c-886ff1f7e242)
 ![image](https://github.com/user-attachments/assets/3951185e-f430-430d-9dae-b1838937e86d)
 
 
 ## Results
 Private f1 score: 0.6809 (28th)
 ![image](https://github.com/user-attachments/assets/941c8d54-2f27-453c-a0de-644427011dbf)
-![image](https://github.com/user-attachments/assets/64520eee-e9a2-4514-81f7-5ecc64914f65)
 
 ## Structure
 
