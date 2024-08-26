@@ -1,6 +1,7 @@
-# YOLOv10 Custom Object Detection
+# YOLOv10 Fall Detection
 
-This repository contains the implementation of **YOLOv10**, a state-of-the-art object detection model. This project is designed to demonstrate custom object detection using YOLOv10 with Python.
+This repository contains the implementation of **YOLOv10**, a state-of-the-art object detection model. 
+This project is designed to do fall detection using object detection by YOLOv10.
 
 ## Table of Contents
 
