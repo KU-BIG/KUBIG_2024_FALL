@@ -23,7 +23,7 @@
   - 챗봇 응답마다 감정 라벨 이모티콘 매칭
 
 
-![image](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/main/KUBIG%20CONTEST/NLP/Team3/architecture%20diagram.png)
+![image](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/main/KUBIG%20CONTEST/NLP/Team3/image/architecture%20diagram.png)
 
 ## Results
 
