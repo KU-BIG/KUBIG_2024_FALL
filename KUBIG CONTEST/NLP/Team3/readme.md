@@ -9,7 +9,7 @@
 ## Structure
 
 * 사용한 데이터셋: AI hub 공감형 대화 데이터셋
-* https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71305
+  https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71305
 
 * GPT-2 기반 한국어 언어모델인 KoGPT2를 답변 생성 모델로 사용
   - 공감형 대화 데이터셋을 Single-turn 과 Multi-turn 형태로 변환
@@ -25,6 +25,8 @@
 ![image](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/main/KUBIG%20CONTEST/NLP/Team3/architecture%20diagram.png)
 
 ## Results
+
+![image](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/main/KUBIG%20CONTEST/NLP/Team3/chat.png)
 
 * 평가
   - 대체적으로 사람 수준의 공감능력, 대화 문맥 유지, 이모티콘으로 감정적 몰입 부여
