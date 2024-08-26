@@ -9,6 +9,7 @@
 ## Structure
 
 * 사용한 데이터셋: AI hub 공감형 대화 데이터셋
+  
   https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71305
 
 * GPT-2 기반 한국어 언어모델인 KoGPT2를 답변 생성 모델로 사용
