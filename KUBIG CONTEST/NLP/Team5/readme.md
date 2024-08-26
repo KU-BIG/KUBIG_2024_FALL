@@ -13,4 +13,3 @@ Private score 28th
 ![image](https://github.com/user-attachments/assets/4c097ec3-c2b5-462b-97bc-dd09c0a5f567)
 
 ## Structure
-\\\ test \\\
