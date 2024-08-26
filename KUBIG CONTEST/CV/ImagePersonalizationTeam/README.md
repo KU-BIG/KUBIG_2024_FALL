@@ -1,4 +1,4 @@
-<div align="center">
+<div>
   <h1>Image Personalization Team Project</h1>
   <p>Welcome to the Image Personalization Team project repository! This repository contains the necessary code and guidelines to train and generate personalized images. Follow the steps below to get started.</p>
   
