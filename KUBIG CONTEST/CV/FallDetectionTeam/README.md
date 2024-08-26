@@ -6,6 +6,7 @@ This repository contains the implementation of **YOLOv10**, a state-of-the-art o
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Train Custom dataset](#trainyourcustomdataset)
 - [Results](#results)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -23,9 +24,6 @@ cd yolov10
 
 # Install required packages
 pip install -r requirements.txt
-
-
-Feel free to adjust the content and sections as needed based on any additional information from
 ```
 
 Additionally, you may need to mount your Google Drive if using Google Colab:
@@ -50,18 +48,59 @@ cd yolov10
 
 **3. Run the training or inference scripts:**
 
-```bash
-python train.py --data data/custom.yaml --cfg cfg/yolov10.yaml --weights weights/yolov10.pt --epochs 50
-```
 To run inference on your images or videos:
 
 ```bash
 python detect.py --source path/to/your/images --weights weights/yolov10.pt
 ```
 
+# Train Your Custom Dataset
+
+**1. Prepare Your Dataset:**
+
+Your dataset should be in the YOLO format (with .txt annotation files for each image, where each line represents an object in the format [class_id, x_center, y_center, width, height] normalized between 0 and 1).
+Organize your dataset into the following directory structure:
+```kotlin
+dataset/
+├── train/
+│   ├── images/
+│   │   ├── image1.jpg
+│   │   ├── image2.jpg
+│   │   └── ...
+│   └── labels/
+│       ├── image1.txt
+│       └── ...
+└── val/
+    ├── image/
+    │   ├── image1.jpg
+    │   ├── image2.jpg
+    │   └── ...
+    └── lables/
+        ├── image1.txt
+        └── ...
+```
+
+**2. To train your Custom model:**
+
+```bash
+python train.py --data data/custom.yaml --cfg cfg/yolov10.yaml --weights weights/yolov10.pt --epochs 50
+```
+Adjust --epochs based on how long you want to train the model.
+You can also adjust other hyperparameters as needed in the cfg/yolov10.yaml file.
+
+**3. Inference with your best.pt model**
+
+Our Best trianed model is in yolov10\runs\detect\train7\weights\best.pt
+
+```bash
+python detect.py --source /path/to/your/new/images --weights yolov10\runs\detect\train7\weights\best.pt --conf 0.25
+```
+
 # Results
 
-Once the training or inference is complete, results will be saved in the runs/ directory. Here, you can find the output images with detected objects and other performance metrics.
+Once the training or inference is complete, results will be saved in the runs/detect/ directory. 
+Here, you can find the output images with detected objects and other performance metrics.
+Our Result is in yolov10\runs\detect\predict7. 
 
 # License
 
