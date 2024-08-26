@@ -6,7 +6,7 @@
 ## Introduction
 
 ## Structure
-![image](https://github.com/user-attachments/assets/c3a61412-7b78-4fa3-922b-08d08b9c34ed)
+![image](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/main/KUBIG%20CONTEST/NLP/Team3/architecture%20diagram.png)
 
 ## Results
 Private f1 score: 0.6809 (28th)
