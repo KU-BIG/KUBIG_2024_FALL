@@ -1,7 +1,7 @@
-# YOLOv10 Fall Detection
+# YOLOv10 Realtime Fall Detection
 
 This repository contains the implementation of **YOLOv10**, a state-of-the-art object detection model. 
-This project is designed to do fall detection using object detection by YOLOv10.
+This project is designed to do real-time fall detection using object detection by YOLOv10.
 
 ## Table of Contents
 
@@ -55,7 +55,7 @@ You can specify the path to download or mount a drive if using a cloud environme
 To run inference on your images or videos:
 
 ```bash
-python detect.py --source path/to/your/images --weights weights/yolov10.pt
+!yolo task=detect mode=predict conf=0.25 save=True model=../weights/yolov10l.pt source="/content/drive/MyDrive/Colab Notebooks/YOLOv10-Custom-Object-Detection-main/Fall_yeonho.mp4"
 ```
 
 # Train Your Custom Dataset
@@ -91,8 +91,9 @@ dataset/
 
 We trained model in epochs of 100. 
 Try this to train your model. 
+
 ```bash
-python train.py --data data/custom.yaml --cfg cfg/yolov10.yaml --weights weights/yolov10.pt --epochs 50
+!yolo task=detect mode=train epochs=100 batch=16 plots=True model=weights/yolov10l.pt data='/content/drive/MyDrive/Colab Notebooks/YOLOv10-Custom-Object-Detection-main/custom_dataset/fall-detection.v2i.yolov9/data.yaml' save_period=5
 ```
 Adjust --epochs based on how long you want to train the model.
 You can also adjust other hyperparameters as needed in the cfg/yolov10.yaml file.
@@ -102,8 +103,9 @@ You can also adjust other hyperparameters as needed in the cfg/yolov10.yaml file
 Our Best trianed model is in yolov10\runs\detect\train7\weights\best.pt. 
 
 ```bash
-python detect.py --source /path/to/your/new/images --weights yolov10\runs\detect\train7\weights\best.pt --conf 0.25
+!yolo task=detect mode=predict conf=0.05 save=True model=runs/detect/train7/weights/best.pt source="/content/drive/MyDrive/Colab Notebooks/YOLOv10-Custom-Object-Detection-main/Fall_yeonho.mp4"
 ```
+We also used a webcam for **real-time inference**. This file is in webcam_inference.py. 
 
 # Results
 
