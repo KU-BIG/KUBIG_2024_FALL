@@ -7,6 +7,7 @@
 **구현**
 
 Model: Ko-BART-V2
+
 Dataset: 다자간 일상대화 데이터
 - train: 506, valid: 102, test: 408
 
