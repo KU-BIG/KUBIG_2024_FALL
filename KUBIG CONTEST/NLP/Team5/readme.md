@@ -10,5 +10,6 @@
 
 ## Results
 ![image](https://github.com/user-attachments/assets/4c097ec3-c2b5-462b-97bc-dd09c0a5f567)
+Private score 28th
 
 ## Structure
