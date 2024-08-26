@@ -1,4 +1,4 @@
-# [Dacon] Financial Information AI Search Algorithm Competition
+# [NLP Team 3] AI 공감의 정상화(공감형 챗봇 만들기 프로젝트)
 
 ## Introduction
 
