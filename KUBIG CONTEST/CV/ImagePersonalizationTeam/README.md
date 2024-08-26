@@ -42,7 +42,7 @@ pip install peft==0.7.0</code></pre>
   <pre><code>python inference.py</code></pre>
 
   <h2>Results</h2>
-  <p>Here are some results from our model:</p>
+  <p>Here are some results:</p>
   <img src="https://github.com/user-attachments/assets/7f50b355-c6ff-415f-b50e-d56b22286292" alt="Generated Image">
 
   <h2>Acknowledgements</h2>
