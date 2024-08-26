@@ -2,8 +2,7 @@
 
 This repository contains the implementation of **YOLOv10**, a state-of-the-art object detection model. 
 This project is designed to do real-time fall detection using object detection by YOLOv10.
-All codes are in Google drive.
-[YOLOv10 Realtime Fall Detection](https://drive.google.com/drive/folders/1pmaeRv51PeHOJqDIckwix_gRQr_AcSHJ?usp=sharing)
+All codes are in Google drive [YOLOv10 Realtime Fall Detection](https://drive.google.com/drive/folders/1pmaeRv51PeHOJqDIckwix_gRQr_AcSHJ?usp=sharing).
 
 
 ## Table of Contents
