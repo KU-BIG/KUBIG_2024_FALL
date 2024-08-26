@@ -14,4 +14,16 @@ Private f1 score: 0.6809 (28th)
 ![image](https://github.com/user-attachments/assets/941c8d54-2f27-453c-a0de-644427011dbf)
 
 ## Structure
-
+```
+Team5/
+│
+├── train.py - finetune the pretrained models
+├── inference.py - make an inference with tuned models
+├── model/ - load the best model
+│   ├── adapter_config.json
+│   ├── special_tokens_map.json
+│   └── ...
+└── modules/ - functions and classes required to operate the model
+    ├── preprocessing.py
+    └── create_db.py
+```
