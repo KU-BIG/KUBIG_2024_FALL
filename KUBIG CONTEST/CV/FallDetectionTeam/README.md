@@ -32,6 +32,7 @@ Additionally, you may need to mount your Google Drive if using Google Colab:
 from google.colab import drive
 drive.mount('/content/drive')
 ```
+We used Google Colab, GPU-T4. 
 
 # Usage
 
@@ -44,7 +45,9 @@ git clone https://github.com/THU-MIG/yolov10.git
 cd yolov10
 ```
 
-**2. Download the required models and weights.** You can specify the path to download or mount a drive if using a cloud environment like Google Colab.
+**2. Download the required models and weights.** 
+
+You can specify the path to download or mount a drive if using a cloud environment like Google Colab.
 
 **3. Run the training or inference scripts:**
 
@@ -58,7 +61,9 @@ python detect.py --source path/to/your/images --weights weights/yolov10.pt
 
 **1. Prepare Your Dataset:**
 
+We used Roboflow - Fall dataset.
 Your dataset should be in the YOLO format (with .txt annotation files for each image, where each line represents an object in the format [class_id, x_center, y_center, width, height] normalized between 0 and 1).
+
 Organize your dataset into the following directory structure:
 
 ```kotlin
@@ -83,6 +88,8 @@ dataset/
 
 **2. To train your Custom model:**
 
+We trained model in epochs of 100. 
+Try this to train your model. 
 ```bash
 python train.py --data data/custom.yaml --cfg cfg/yolov10.yaml --weights weights/yolov10.pt --epochs 50
 ```
@@ -91,7 +98,7 @@ You can also adjust other hyperparameters as needed in the cfg/yolov10.yaml file
 
 **3. Inference with your best.pt model**
 
-Our Best trianed model is in yolov10\runs\detect\train7\weights\best.pt
+Our Best trianed model is in yolov10\runs\detect\train7\weights\best.pt. 
 
 ```bash
 python detect.py --source /path/to/your/new/images --weights yolov10\runs\detect\train7\weights\best.pt --conf 0.25
