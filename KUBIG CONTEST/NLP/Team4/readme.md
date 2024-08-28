@@ -36,10 +36,9 @@
 
 ### 번역 ###
 
-![image](https://github.com/user-attachments/assets/a556c94c-e319-4340-bc73-e1c527392714)
+<img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/60ff0e95-9d5c-4c5b-82c9-ed2dff2908bb">
 
-![image](https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a)
-
+<img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a">
 
 ### 챗봇+번역 ###
 <img width="929" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
