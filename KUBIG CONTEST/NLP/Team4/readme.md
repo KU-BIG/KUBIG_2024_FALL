@@ -42,6 +42,9 @@
 #### 예시: 표준어-전라도
 <img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a">
 
+#### 예시: 표준어-제주도
+<img width="1008" alt="Screenshot 2024-08-28 at 12 09 38 PM" src="https://github.com/user-attachments/assets/f887cec2-3281-48fa-abd0-a95e10466c1e">
+
 ### 챗봇+번역 ###
 <img width="929" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
 
