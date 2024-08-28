@@ -36,8 +36,10 @@
 
 ### 번역 ###
 
-<img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/60ff0e95-9d5c-4c5b-82c9-ed2dff2908bb">
+#### 예시: 표준어-강원도
+<img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/250091a6-0dc5-4add-90ce-5917ff388671">
 
+#### 예시: 표준어-전라도
 <img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a">
 
 ### 챗봇+번역 ###
