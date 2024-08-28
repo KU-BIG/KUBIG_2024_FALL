@@ -38,14 +38,22 @@
 
 ### 번역 ###
 
-#### 예시: 표준어-강원도
-<img width = "930" alt = "image" src="https://github.com/user-attachments/assets/250091a6-0dc5-4add-90ce-5917ff388671">
+#### 예시: 표준어-제주도
+<img width="930" alt="Screenshot 2024-08-28 at 12 09 38 PM" src="https://github.com/user-attachments/assets/f887cec2-3281-48fa-abd0-a95e10466c1e">
 
 #### 예시: 표준어-전라도
 <img width = "930" alt = "image" src="https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a">
 
-#### 예시: 표준어-제주도
-<img width="930" alt="Screenshot 2024-08-28 at 12 09 38 PM" src="https://github.com/user-attachments/assets/f887cec2-3281-48fa-abd0-a95e10466c1e">
+#### 예시: 표준어-경상도
+<img width="930" alt="Screenshot 2024-08-28 at 1 34 00 PM" src="https://github.com/user-attachments/assets/fbd606c9-4f8e-4cd3-8aee-db5aeb2da4ee">
+
+#### 예시: 표준어-충청도
+<img width="930" alt="Screenshot 2024-08-28 at 1 35 12 PM" src="https://github.com/user-attachments/assets/977c00ce-1c76-4d8a-9965-9dcd3968679e">
+
+#### 예시: 표준어-강원도
+<img width = "930" alt = "image" src="https://github.com/user-attachments/assets/250091a6-0dc5-4add-90ce-5917ff388671">
+
+
 
 ### 챗봇+번역 ###
 
