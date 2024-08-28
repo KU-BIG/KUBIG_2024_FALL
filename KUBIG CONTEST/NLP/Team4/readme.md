@@ -26,7 +26,7 @@
 ## Model ## 
 
 ### 번역 ###
-- 최종 모델 : KoBART conditional Generate model을 fine-tuning
+- 최종 모델 : KoBART conditional generative model을 fine-tuning
 
 ### 챗봇 ###
 - 최종 모델 : KoGPT2 pretrained model을 fine-tuning
