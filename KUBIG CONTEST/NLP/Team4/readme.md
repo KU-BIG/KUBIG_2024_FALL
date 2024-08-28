@@ -25,14 +25,12 @@
 
 ## Model ## 
 
-### 챗봇 ###
-- 최종 모델 : KoGPT2 pretrained model을 fine-tuning
-<img width="608" alt="image" src="https://github.com/user-attachments/assets/96ac8514-8f91-420e-a880-c4f5a86b3e53">
-
-
 ### 번역 ###
 - 최종 모델 : KoBART conditional Generate model을 fine-tuning
 
+### 챗봇 ###
+- 최종 모델 : KoGPT2 pretrained model을 fine-tuning
+<img width="608" alt="image" src="https://github.com/user-attachments/assets/96ac8514-8f91-420e-a880-c4f5a86b3e53">
 
 ## Result ##
 <img width="929" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
