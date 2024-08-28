@@ -33,6 +33,15 @@
 <img width="608" alt="image" src="https://github.com/user-attachments/assets/96ac8514-8f91-420e-a880-c4f5a86b3e53">
 
 ## Result ##
+
+### 번역 ###
+
+![image](https://github.com/user-attachments/assets/a556c94c-e319-4340-bc73-e1c527392714)
+
+![image](https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a)
+
+
+### 챗봇+번역 ###
 <img width="929" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
 
 <img width="1008" alt="image" src="https://github.com/user-attachments/assets/b28c2e4b-d6ad-4cef-980e-bf9518fb0ec3">
