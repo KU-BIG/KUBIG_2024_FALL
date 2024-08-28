@@ -9,7 +9,7 @@
 ## Introduction ## 
 목표 : “ 지역 방언을 사용해 질문에 응답하는 챗봇 개발 ”
 
-<img width="1195" alt="image" src="https://github.com/user-attachments/assets/749a732b-5d43-44bd-97cf-3d6968e9f00c">
+<img width="930" alt="image" src="https://github.com/user-attachments/assets/749a732b-5d43-44bd-97cf-3d6968e9f00c">
 
 ## Structure ##
 
@@ -39,21 +39,21 @@
 ### 번역 ###
 
 #### 예시: 표준어-강원도
-<img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/250091a6-0dc5-4add-90ce-5917ff388671">
+<img width = "930" alt = "image" src="https://github.com/user-attachments/assets/250091a6-0dc5-4add-90ce-5917ff388671">
 
 #### 예시: 표준어-전라도
-<img width = "1008" alt = "image" src="https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a">
+<img width = "930" alt = "image" src="https://github.com/user-attachments/assets/016be5ba-b1a1-478a-82ba-8334fd27ce5a">
 
 #### 예시: 표준어-제주도
-<img width="1008" alt="Screenshot 2024-08-28 at 12 09 38 PM" src="https://github.com/user-attachments/assets/f887cec2-3281-48fa-abd0-a95e10466c1e">
+<img width="930" alt="Screenshot 2024-08-28 at 12 09 38 PM" src="https://github.com/user-attachments/assets/f887cec2-3281-48fa-abd0-a95e10466c1e">
 
 ### 챗봇+번역 ###
 
 #### 예시: 일상대화 + 제주도 사투리, 일상대화 + 충청도 사투리
-<img width="929" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
+<img width="930" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
 
 
-<img width="1008" alt="image" src="https://github.com/user-attachments/assets/b28c2e4b-d6ad-4cef-980e-bf9518fb0ec3">
+<img width="930" alt="image" src="https://github.com/user-attachments/assets/b28c2e4b-d6ad-4cef-980e-bf9518fb0ec3">
 
 - 발화 의도에 맞는 답변을 번역된 버전으로 성공적으로 생성함을 확인할 수 있음
   
