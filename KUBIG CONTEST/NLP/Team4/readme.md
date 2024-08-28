@@ -47,10 +47,10 @@
 
 ### 챗봇+번역 ###
 
-#### 예시: 일상대화 + 충청도 사투리
+#### 예시: 일상대화 + 제주도 사투리
 <img width="929" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
 
-#### 예시: 일상대화 + 제주도 사투리
+
 <img width="1008" alt="image" src="https://github.com/user-attachments/assets/b28c2e4b-d6ad-4cef-980e-bf9518fb0ec3">
 
 - 발화 의도에 맞는 답변을 번역된 버전으로 성공적으로 생성함을 확인할 수 있음
