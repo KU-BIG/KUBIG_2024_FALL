@@ -47,7 +47,7 @@
 
 ### 챗봇+번역 ###
 
-#### 예시: 일상대화 + 제주도 사투리
+#### 예시: 일상대화 + 제주도 사투리, 일상대화 + 충청도 사투리
 <img width="929" alt="image" src="https://github.com/user-attachments/assets/7f7bda19-1c92-47e3-8d09-01d4c778bed1">
 
 
