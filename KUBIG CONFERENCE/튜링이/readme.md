@@ -13,7 +13,7 @@ GPT를 기반으로 생성된 문서들을 탐지하는 패턴을 발견하고(*
 - ai-hub의 에세이 글 평가 데이터를 활용해 human-written text와 paraphrased text(일부 생성), generated text(100% ai 생성)을 비교
 
 ### BERT Classifier(train+test)
-- human-written text는 0, ai-generated text는 1로 labeling하여 학습 및 테스트
+- human-written text는 0, ai-generated text는 1로 labeling하여 학습
 - ai-hub의 에세이 글 평가 데이터 활용해 human-written text와 paraphrased text(일부 생성), generated text(100% ai 생성)을 비교
 
 ## Results
