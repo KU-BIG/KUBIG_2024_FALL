@@ -18,5 +18,5 @@ GPT를 기반으로 생성된 문서들을 탐지하는 패턴을 발견하고(*
 
 ## Results
 ![image](https://github.com/user-attachments/assets/56f61c7a-7e9d-4e42-a3bc-4acf209903f9)
-- **Fast-DetectGPT**는 original text와 paraphrased text의 분포를 더 뚜렷하게 구분
+- **Fast-DetectGPT**는 source model에 대한 의존성이 존재하나 분포를 더 뚜렷하게 구분
 - **BERT Classifier**는 학습 데이터에 대한 의존성으로 인해 분포 간 겹침이 많아 탐지 정확도가 제한적
