@@ -53,7 +53,7 @@ youth_policy
 
 ## Example
 
-![example](https://github.com/user-attachments/assets/06e4137f-2012-471d-a3df-2bf065eb4019)
+추후 입력 
 
 ## Authors
 
@@ -63,30 +63,10 @@ This project was created by the following contributors:
 
     - 고려대학교 통계학과 석사
 
-    - 정책용어 크롤링
-
-    - 프롬프트 엔지니어링을 통한 챗봇 성능 개선
-    
-    - 프로젝트 소개서 작성
-
 - **원준혁**
 
     - 고려대학교 통계학과 석사
 
-    - 정책정보 크롤링 및 정책 파일 저장
-    
-    - 크롤링 정보 데이터베이스 저장 및 chunking, embedding
-
-    - 데모 실행 조정 및 비디오 제작
-
 - **이세은**
 
     - 고려대학교 통계학과 학부
-
-    - SMART-RAG 파이프라인 구축 및 챗봇 실행 코드 작성
-
-    - Gradio를 통한 웹서비스 구현
-
-    - Github repository 정리 및 readme.md 작성
-
-
