@@ -57,8 +57,6 @@ youth_policy
 
 ## Authors
 
-This project was created by the following contributors:
-
 - **강민정** 
 
     - 고려대학교 통계학과 석사
