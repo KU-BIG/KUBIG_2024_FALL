@@ -7,9 +7,13 @@ GPT를 기반으로 생성된 문서들을 탐지하는 패턴을 발견하고(*
 19기 심승현, 강지윤, 이동주
 
 ## Methods
-### Fast-DetectGPT
+### Fast-DetectGPT(zero-shot)
+- Perturbation에 따른 log likelihood의 차이를 기반으로 ai-generated text를 Detection하는 Detect-GPT에 기반
+- Sampling을 활용해 conditional score를 비교하는 방식으로 속도를 개선
+- ai-hub의 에세이 글 평가 데이터를 활용해 paraphrased text(일부 생성)와 generated text(100% ai 생성)로 experiments
 
-
-### BERT Classifier
+### BERT Classifier(train+test)
+- human-written text는 0, ai-generated text는 1로 labeling하여 학습 및 테스트
+- 마찬가지로 ai-hub의 에세이 글 평가 데이터를 활용
 
 ## Results
