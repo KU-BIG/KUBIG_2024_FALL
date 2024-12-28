@@ -1,12 +1,12 @@
 (수정중......)
 
-# 청년정책 추천 챗봇
+# 숨은 정책 찾기 - 청년 정책 특화 대화형 AI 챗봇 서비스
 
 ## 프로젝트 개요
 
-청년정책 추천 챗봇은 사용자가 거주지, 나이, 취업 상태 등과 같은 개인 정보를 입력하면 맞춤형 청년정책을 추천해주는 실시간 대화형 챗봇 서비스입니다. 이 프로젝트는 지속적인 대화를 통해 사용자가 복잡한 정책 정보를 쉽게 이해하고, 자신에게 맞는 정책을 간편하게 선택할 수 있도록 돕는 것을 목표로 합니다.
+"청년 정책 특화 대화형 AI 챗봇"은 사용자에게 맞춤형 청년정책을 추천하고, 방대한 정책 정보를 정확하고 신속하게 제공하는 챗봇 서비스입니다. 지속적인 대화를 통해 사용자가 복잡한 정책 정보를 쉽게 이해하고, 자신에게 맞는 정책을 간편하게 선택할 수 있도록 돕는 것을 목표로 합니다.
 
-이 챗봇은 대한민국 공식 전자정부 웹사이트인 [온통청년](https://www.youthcenter.go.kr/main.do)의 청년정책 데이터를 기반으로 하여, 지역별, 연령별, 상황에 맞는 정책을 빠르게 제공하며, 정책의 상세한 내용도 함께 안내합니다. Gradio 인터페이스를 사용해 웹 브라우저에서 손쉽게 챗봇을 사용할 수 있으며, 직관적인 대화 형식으로 누구나 쉽게 접근할 수 있습니다.
+이 챗봇은 대한민국 공식 전자정부 웹사이트인 [온통청년](https://www.youthcenter.go.kr/main.do)의 청년정책 데이터를 기반으로 하여, 지역별, 연령별, 상황에 맞는 정책을 빠르게 제공하며, 정책의 상세한 내용도 함께 안내합니다. Streamlit 인터페이스를 사용해 웹 브라우저에서 손쉽게 챗봇을 사용할 수 있으며, 직관적인 대화 형식으로 누구나 쉽게 접근할 수 있습니다.
 
 ### 주요 기능
 
@@ -18,85 +18,30 @@
 
 2. 정책 세부사항 제공
 
-    - 사용자가 특정한 정책의 신청 기간, 자격 요건, 필수 지원 서류 등을 질문하면 관련 문서에서 해당 내용을 찾아 답변 제공
+    - 사용자가 특정한 정책의 신청 자격, 기간 등을 질문하면 관련 문서에서 해당 내용을 찾아 정확한 답변 제공
 
-3. 정책용어 설명
+3. 정책 용어 의미 설명
 
-    - 정책 정보에 포함된 어려운 용어에 대한 부가적인 설명 제공
+    - 사용자가 정책 정보에 포함된 특정한 용어의 의미를 질문하면 이해하기 쉽게 설명
+  
+4. 실제 후기 요약
+
+    - 사용자가 특정 정책의 이용 후기를 질문하면 네이버 블로그에서 후기를 검색하여 요약 제공
 
 ## Project Structure
 
 ```
 youth_policy
-├─ .gitignore
-├─ chatbot.py
+├─ chatbot_Self_RAG.ipynb
+├─ chatbot_Smart_RAG.py
 ├─ data
-│  ├─ chromadb.py
+│  ├─ chromadb_before.py
+│  ├─ chromadb_new.ipynb
 │  ├─ crawling_words.ipynb
 │  ├─ layout_analyzer.py
 │  └─ policy_crawling_and_attached_file_save.py
-├─ download_db.py
-├─ README.md
-└─ requirements.txt
+└─ README.md
 ```
-
-## Installation
-
-1. **Clone the repository**:
-
-    Clone the repository to your local machine using the following command:
-
-    ```bash
-    git clone https://github.com/junhyeok9/youth_policy.git
-    ```
-
-
-2. **Navigate to the project directory**:
-
-    Move into the directory of the cloned repository:
-
-    ```bash
-    cd youth_policy
-    ```
-
-3. **Install the required packages**:
-
-    Install all the dependencies listed in the ```requirements.txt``` file:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-
-## Usage
-
-1. **Download the Chroma DB from Google Drive**:
-
-    Run the ```download_db.py``` script to download the necessary database files.
-
-    ```bash
-    python download_db.py
-    ```   
-
-2. **Set up API keys in environment variables**:
-
-    Rename the ```.env.example``` file to ```.env```, and add your API keys inside the file.
-
-3. **Run the chatbot**:
-
-    Start the chatbot by running the ```chatbot.py``` script.
-
-    ```bash
-    python chatbot.py
-    ```
-
-4. **Open the Gradio interface**:
-
-    After running the chatbot, open the Gradio interface in your web browser by navigating to:
-
-    ```
-    http://127.0.0.1:7860
-    ```
 
 ## Pipeline
 
