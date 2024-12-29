@@ -16,6 +16,8 @@ This python file is automated video dataset download code.
 
 ## To run the code
 python exp_run1.py --config configs/camera.yaml
+
+
 python exp_run2.py --config configs/camera.yaml
 
 These two python file uses different loss function
