@@ -10,6 +10,15 @@ This repository is based on the original **[LAMP](https://github.com/RQ-Wu/LAMP)
 ## Preparation and Pretrained Models
 For detailed guidance on preparation steps and pretrained models, please refer to the original [LAMP repository](https://github.com/RQ-Wu/LAMP).
 
+## Additional preparation
+For camera trajectory data preparation, run dataset.py 
+This python file is automated video dataset download code. 
+
+## To run the code
+python exp_run1.py --config configs/camera.yaml
+python exp_run2.py --config configs/camera.yaml
+
+These two python file uses different loss function
 ---
 
 ## Acknowledgments
