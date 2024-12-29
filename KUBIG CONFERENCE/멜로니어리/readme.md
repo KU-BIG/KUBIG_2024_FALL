@@ -4,18 +4,18 @@
 
 20기 김유진, 김재훈, 박준희 
 
-### Introduction 
+## Introduction 
 
 오늘의 일기와 간단한 음악 취향을 입력하면, 오늘 듣기 좋은 노래 리스트를 출력해주는 알고리즘 디자인 
 
-### Data
+## Data
 
 ##### Melon Crawling
 - 인기차트
 - 장르음악
 - 멜론 DJ 플레이리스트 
 
-### Modeling
+## Modeling
 
 ##### 일기 태그 추출 
 - OpenAI 활용
