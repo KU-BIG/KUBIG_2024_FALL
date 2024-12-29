@@ -44,9 +44,9 @@ youth_policy
 ├─ data
 │  ├─ chromadb_before.py
 │  ├─ chromadb_new.ipynb
-│  ├─ crawling_words.ipynb
 │  ├─ layout_analyzer.py
-│  └─ policy_crawling_and_attached_file_save.py
+│  ├─ policy_crawling_and_attached_file_save.py
+│  └─ words_crawling.ipynb
 ├─ README.md
 └─ streamlit.ipynb
 ```
