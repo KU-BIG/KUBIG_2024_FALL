@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MY SNAP</title>
+  <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="slider">
+	<button class="slider--btn slider--btn__prev">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="m15 18-6-6 6-6" />
+		</svg>
+	</button>
+
+	<div class="slides__wrapper">
+		<div class="slides">
+			<!-- slide 1 -->
+			<div class="slide" data-current>
+				<div class="slide__inner">
+					<div class="slide--image__wrapper">
+						<a href="/wedding/selection">
+						<img class="slide--image" src="https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/weddings.png" alt="Image 1" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="slide__bg" style="--bg: url(https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/weddings.png); --dir: 0" data-current></div>
+
+			<!-- slide 2 -->
+			<div class="slide" data-next>
+				<div class="slide__inner">
+					<div class="slide--image__wrapper">
+						<a href="/graduation/selection">
+						<img class="slide--image" src="https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/graduate.png" alt="Image 2" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="slide__bg" style="--bg: url(https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/graduate.png); --dir: 1" data-next></div>
+
+			<!-- slide 3 -->
+			<div class="slide" data-previous>
+				<div class="slide__inner">
+					<div class="slide--image__wrapper">
+						<a href="/daily/selection">
+						<img class="slide--image" src="https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/life.png" alt="Image 3" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="slide__bg" style="--bg: url(https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/life.png); --dir: -1" data-previous></div>
+		</div>
+		<div class="slides--infos">
+			<!-- Slide Info 1 -->
+			<div class="slide-info" data-current>
+				<div class="slide-info__inner">
+					<div class="slide-info--text__wrapper">
+						<div data-title class="slide-info--text">
+							<span>WEDDINGS</span>
+						</div>
+						<div data-subtitle class="slide-info--text">
+							<span>CAPTURE YOUR LOVE STORY</span>
+						</div>
+						<div data-description class="slide-info--text">
+							<span>From the first glance to the last dance</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide Info 2 -->
+			<div class="slide-info" data-next>
+				<div class="slide-info__inner">
+					<div class="slide-info--text__wrapper">
+						<div data-title class="slide-info--text">
+							<span>GRADUATION</span>
+						</div>
+						<div data-subtitle class="slide-info--text">
+							<span>START YOUR NEXT CHAPTER</span>
+						</div>
+						<div data-description class="slide-info--text">
+							<span>Memories to last a lifetime</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide Info 3 -->
+			<div class="slide-info" data-previous>
+				<div class="slide-info__inner">
+					<div class="slide-info--text__wrapper">
+						<div data-title class="slide-info--text">
+							<span>DAILY LIFE</span>
+						</div>
+						<div data-subtitle class="slide-info--text">
+							<span>BEAUTY IN EVERY MOMENT</span>
+						</div>
+						<div data-description class="slide-info--text">
+							<span>Simple memories, beautifully captured</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<button class="slider--btn slider--btn__next">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="m9 18 6-6-6-6" />
+		</svg>
+	</button>
+</div>
+
+<div class="loader">
+	<span class="loader__text"></span>
+</div>
+
+
+<!-- partial -->
+  <script type="module" src="/static/script.js"></script>
+
+</body>
+</html>
