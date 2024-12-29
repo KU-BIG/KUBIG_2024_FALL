@@ -15,6 +15,9 @@
   4. 시계열 이상치 탐지, 반품 데이터 제거
 
 * 분석 방법 및 절차
+
+  ![structure](https://github.com/user-attachments/assets/3570c20c-a8af-46f5-aaac-970d170e76a8)
+  
   - 상품별로 수요 패턴에 따라 군집을 나눈 후, 군집별로 시계열 예측 방법론을 적용
   - 개별 품목의 묶음 개수를 의미하는 '입수'를 기준으로 3개의 군집으로 분류
   - 수요패턴을 의미하는 ADI와 CV 값을 기준으로 4개의 군집으로 분류(Smooth, Erratic, Intermittent, lumpy)
