@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Feedback - AI README Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        :root {
+            --bg-color: #000000;
+            --primary-color: #00ffff;
+            --secondary-color: #1e3799;
+            --text-color: #ffffff;
+            --accent-color: #ff00ff;
+        }
+
+        body, html {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 20%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 95%;
+            margin: clamp(20px, 4vw, 40px) auto;
+            padding: clamp(20px, 3vw, 40px) clamp(10px, 2vw, 20px);
+        }
+
+        .feedback-card {
+            background: rgba(30, 55, 153, 0.2);
+            border-radius: 15px;
+            padding: clamp(20px, 4vw, 40px);
+            backdrop-filter: blur(7px);
+            border: 1.5px solid rgba(0, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            text-align: center;
+            font-size: clamp(1.8em, 4vw, 2.7em);
+            margin-bottom: 30px;
+            text-shadow: 0 0 7px var(--primary-color), 0 0 14px var(--primary-color);
+        }
+
+        .rating-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .rating-button {
+            background: rgba(0, 255, 255, 0.1);
+            border: none;
+            padding: 15px 25px;
+            color: var(--text-color);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .rating-button:hover,
+        .rating-button.active {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        .feedback-type {
+            margin: 20px 0;
+        }
+
+        .type-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .type-button {
+            background: rgba(255, 0, 255, 0.1);
+            border: none;
+            padding: 10px 20px;
+            color: var(--text-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .type-button:hover,
+        .type-button.active {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        textarea, input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(30, 55, 153, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+            resize: vertical;
+        }
+
+        textarea:focus, input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--bg-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        label {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+        font-weight: 700;  /* 400에서 700으로 변경 */
+        font-size: 1.1em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        }
+        /* SweetAlert2 커스텀 스타일 추가 */
+        .swal2-popup {
+            background: rgba(30, 30, 50, 0.95) !important;
+            border: 2px solid rgba(0, 255, 255, 0.3) !important;
+            border-radius: 15px !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+        }
+
+        .swal2-title {
+            color: var(--primary-color) !important;
+            font-family: 'Orbitron', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+
+        .swal2-html-container {
+            color: var(--text-color) !important;
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        .swal2-confirm {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) !important;
+            border: none !important;
+            border-radius: 50px !important;
+            padding: 15px 30px !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+
+        .swal2-confirm:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4) !important;
+        }
+
+        .swal2-timer-progress-bar {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) !important;
+        }
+
+        @media (max-width: 600px) {
+            .rating-group {
+                gap: 5px;
+            }
+
+            .rating-button {
+                padding: 10px 15px;
+                min-width: 80px;
+                font-size: 14px;
+            }
+
+            .type-buttons {
+                gap: 5px;
+            }
+
+            .type-button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Service Feedback</h1>
+        
+        <form id="feedbackForm" class="feedback-card">
+            {% csrf_token %}
+            <input type="hidden" name="document_id" value="{{ request.GET.document_id }}">
+            
+            <div class="form-group">
+                <label>서비스 만족도</label>
+                <div class="rating-group">
+                    {% for value, label in rating_choices %}
+                    <button type="button" class="rating-button" data-value="{{ value }}">
+                        {{ label }}
+                    </button>
+                    {% endfor %}
+                </div>
+                <input type="hidden" name="rating" id="ratingInput" required>
+            </div>
+
+            <div class="form-group">
+                <label>피드백 유형</label>
+                <div class="type-buttons">
+                    {% for value, label in service_types %}
+                    <button type="button" class="type-button" data-value="{{ value }}">
+                        {{ label }}
+                    </button>
+                    {% endfor %}
+                </div>
+                <input type="hidden" name="service_type" id="serviceTypeInput" required>
+            </div>
+
+            <div class="form-group">
+                <label>상세 의견</label>
+                <textarea name="content" rows="5" placeholder="서비스 개선을 위한 의견을 자유롭게 작성해주세요." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>이메일 (선택사항)</label>
+                <input type="email" name="email" placeholder="회신이 필요한 경우 이메일을 남겨주세요.">
+            </div>
+
+            <button type="submit" class="submit-btn">
+                피드백 제출 <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ratingButtons = document.querySelectorAll('.rating-button');
+            const typeButtons = document.querySelectorAll('.type-button');
+            const ratingInput = document.getElementById('ratingInput');
+            const serviceTypeInput = document.getElementById('serviceTypeInput');
+    
+            // Rating buttons
+            ratingButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    ratingButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    ratingInput.value = this.dataset.value;
+                });
+            });
+    
+            // Type buttons
+            typeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    typeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    serviceTypeInput.value = this.dataset.value;
+                });
+            });
+    
+            // Form submission
+            document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+    
+                if (!ratingInput.value || !serviceTypeInput.value) {
+                    Swal.fire({
+                        title: '입력 확인',
+                        text: '서비스 만족도와 피드백 유형을 선택해주세요.',
+                        icon: 'warning',
+                        confirmButtonText: '확인',
+                        background: 'rgba(30, 30, 50, 0.95)',
+                        customClass: {
+                            container: 'swal-container'
+                        }
+                    });
+                    return;
+                }
+    
+                fetch('/feedback/submit/', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    },
+                    body: new FormData(this)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        Swal.fire({
+                            title: '피드백 제출 완료',
+                            text: '소중한 의견 감사합니다!',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            customClass: {
+                                container: 'swal-container'
+                            }
+                        }).then(() => {
+                            window.location.href = '/';
+                        });
+                    } else {
+                        Swal.fire({
+                            title: '제출 오류',
+                            text: '피드백 제출 중 문제가 발생했습니다. 다시 시도해주세요.',
+                            icon: 'error',
+                            confirmButtonText: '확인',
+                            customClass: {
+                                container: 'swal-container'
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        title: '제출 오류',
+                        text: '피드백 제출 중 문제가 발생했습니다. 다시 시도해주세요.',
+                        icon: 'error',
+                        confirmButtonText: '확인',
+                        customClass: {
+                            container: 'swal-container'
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
