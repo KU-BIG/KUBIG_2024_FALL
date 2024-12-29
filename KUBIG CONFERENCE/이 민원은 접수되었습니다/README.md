@@ -1,5 +1,3 @@
-(수정중......)
-
 # 숨은 정책 찾기 - 청년 정책 특화 대화형 AI 챗봇 서비스
 
 ## 프로젝트 개요
@@ -19,18 +17,23 @@
     ![ex1](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/46193e797f9a55692ca0ca848e87419b5461ebde/KUBIG%20CONFERENCE/%EC%9D%B4%20%EB%AF%BC%EC%9B%90%EC%9D%80%20%EC%A0%91%EC%88%98%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/image/example1.png)
 
 
-
 2. 정책 세부사항 제공
 
     - 사용자가 특정한 정책의 신청 자격, 기간 등을 질문하면 관련 문서에서 해당 내용을 찾아 정확한 답변 제공
 
-4. 정책 용어 의미 설명
+    ![ex2](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/9f6f66195fc23bedeb1cbe66f4b41e9191d57dda/KUBIG%20CONFERENCE/%EC%9D%B4%20%EB%AF%BC%EC%9B%90%EC%9D%80%20%EC%A0%91%EC%88%98%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/image/example2.png)
+
+3. 정책 용어 의미 설명
 
     - 사용자가 정책 정보에 포함된 특정한 용어의 의미를 질문하면 이해하기 쉽게 설명
   
-5. 실제 후기 요약
+    ![ex3](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/ad9b0df08bbb24fd9ed59f8b8607f97020f08966/KUBIG%20CONFERENCE/%EC%9D%B4%20%EB%AF%BC%EC%9B%90%EC%9D%80%20%EC%A0%91%EC%88%98%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/image/example3.png)
+  
+4. 실제 후기 요약
 
     - 사용자가 특정 정책의 이용 후기를 질문하면 네이버 블로그에서 후기를 검색하여 요약 제공
+  
+    ![ex4](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/778fcd1574d416bf2a5e58a7d59937d453c4f32e/KUBIG%20CONFERENCE/%EC%9D%B4%20%EB%AF%BC%EC%9B%90%EC%9D%80%20%EC%A0%91%EC%88%98%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/image/example4.png)   
 
 ## Project Structure
 
