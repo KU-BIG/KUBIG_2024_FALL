@@ -16,15 +16,19 @@
 
     - 유사한 정책 간 비교
 
+    ![ex1](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/46193e797f9a55692ca0ca848e87419b5461ebde/KUBIG%20CONFERENCE/%EC%9D%B4%20%EB%AF%BC%EC%9B%90%EC%9D%80%20%EC%A0%91%EC%88%98%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/image/example1.png)
+
+
+
 2. 정책 세부사항 제공
 
     - 사용자가 특정한 정책의 신청 자격, 기간 등을 질문하면 관련 문서에서 해당 내용을 찾아 정확한 답변 제공
 
-3. 정책 용어 의미 설명
+4. 정책 용어 의미 설명
 
     - 사용자가 정책 정보에 포함된 특정한 용어의 의미를 질문하면 이해하기 쉽게 설명
   
-4. 실제 후기 요약
+5. 실제 후기 요약
 
     - 사용자가 특정 정책의 이용 후기를 질문하면 네이버 블로그에서 후기를 검색하여 요약 제공
 
@@ -40,7 +44,8 @@ youth_policy
 │  ├─ crawling_words.ipynb
 │  ├─ layout_analyzer.py
 │  └─ policy_crawling_and_attached_file_save.py
-└─ README.md
+├─ README.md
+└─ streamlit.ipynb
 ```
 
 ## Pipeline - Self RAG
