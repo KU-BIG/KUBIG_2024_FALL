@@ -59,10 +59,6 @@ youth_policy
 
 ![pipeline2](https://github.com/KU-BIG/KUBIG_2024_FALL/blob/4d9a40501fef44e99d34ed7f55018a478eff6bad/KUBIG%20CONFERENCE/%EC%9D%B4%20%EB%AF%BC%EC%9B%90%EC%9D%80%20%EC%A0%91%EC%88%98%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/image/pipeline_Smart_RAG.png)
 
-## Example
-
-추후 입력 
-
 ## Authors
 
 - **강민정** 
