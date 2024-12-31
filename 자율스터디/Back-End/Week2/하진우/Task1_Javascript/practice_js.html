@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <script>
+      function nightdayHandler(self) {
+        var target = document.querySelector("body");
+        var alist = document.querySelectorAll("li");
+
+        if (self.value === "Dark-mode") {
+          target.style.backgroundColor = "black";
+          target.style.color = "white";
+          self.value = "Normal-mode";
+
+          i = 0;
+          while (i < alist.length) {
+            alist[i].style.color = "powderblue";
+            i = i + 1;
+          }
+        } else {
+          target.style.backgroundColor = "white";
+          target.style.color = "black";
+          self.value = "Dark-mode";
+
+          i = 0;
+          while (i < alist.length) {
+            alist[i].style.color = "blue";
+            i = i + 1;
+          }
+        }
+      }
+    </script>
+    hi
+    <script>
+      document.write(1 + 1);
+    </script>
+
+    <input type="button" value="Button" onclick="alert('hi')" />
+    <input type="text" onchange="alert('changed')" />
+
+    <input id="Mode" type="button" value="Dark-mode" onclick="
+    nightdayHandler(this);
+    " />
+
+    <h1>Array syntax</h1>
+    <script>
+      var array_example = ["one", "two"];
+    </script>
+
+    <h1>get data</h1>
+    <script>
+      document.write(array_example[0]);
+      document.write(array_example[1]);
+      document.write(array_example.length);
+    </script>
+    <h1>Add data</h1>
+    <script>
+      array_example.push("three");
+      array_example.push("four");
+      document.write(array_example.length);
+    </script>
+    <h1>Loop</h1>
+    <script>
+      var i = 0;
+      while (i < 3) {
+        document.write(0);
+        document.write(1);
+        i = i + 1;
+      }
+    </script>
+
+    <h1>Array&Loop</h1>
+    <script>
+      var array_example = ["one", "two", "three", "four", "five"];
+      var i = 0;
+      while (i < array_example.length) {
+        document.write("<li>" + array_example[i] + "</li>");
+        i = i + 1;
+      }
+    </script>
+
+    <h1>Function</h1>
+    <script>
+      function plusthings(left, right) {
+        document.write(left + right + "<br>");
+      }
+      plusthings(3, 5);
+      plusthings(10, 5);
+
+      function justthings(left, right) {
+        document.write(left + right + " hi");
+      }
+      justthings(9, 10);
+    </script>
+  </body>
+</html>

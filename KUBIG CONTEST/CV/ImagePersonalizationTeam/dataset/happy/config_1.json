@@ -1,0 +1,12 @@
+{
+    "fine_tune_happy": {
+        "images": ["dataset/happy/05.jpg", "dataset/happy/06.jpg", "dataset/happy/07.jpg", "dataset/happy/08.jpg", "dataset/happy/09.jpg"],
+        "prompts": ["a photo of sks dog", "a photo of sks dog", "a photo of sks dog", "a photo of sks dog", "a photo of sks dog"],
+        "test_images": ["dataset/happy/05.jpg", "dataset/happy/06.jpg", "dataset/happy/07.jpg", "dataset/happy/08.jpg", "dataset/happy/09.jpg"],
+        "identifier": "sks dog",
+        "class": "dog",
+        "inserting_tokens": ["sks dog"],
+        "initializer_tokens": ["dog"],
+        "base_prompts": ["a photo of a dog", "a photo of a dog", "a photo of a dog", "a photo of a dog", "a photo of a dog"]
+    }
+}

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI README Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --primary-color: #00ffff;
+            --secondary-color: #1e3799;
+            --text-color: #ffffff;
+            --accent-color: #ff00ff;
+        }
+        
+        body, html {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 20%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 95%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            font-size: clamp(1.5em, 3.5vw, 2.7em);
+            margin-bottom: 25px;
+            text-shadow: 0 0 7px var(--primary-color), 0 0 14px var(--primary-color);
+        }
+
+        .card {
+            background-color: rgba(30, 55, 153, 0.2);
+            border-radius: 15px;
+            padding: clamp(15px, 3vw, 25px);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(7px);
+            border: 1.5px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        @media (hover: hover) {
+            .card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(15px, 2vw, 20px);
+        }
+
+        .file-input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .file-input-label {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--bg-color);
+            padding: clamp(8px, 1.5vw, 10px) clamp(15px, 3vw, 20px);
+            border-radius: 25px;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: clamp(12px, 1.5vw, 14px);
+        }
+
+        @media (hover: hover) {
+            .file-input-label:hover {
+                transform: translateY(-2px) scale(1.03);
+                box-shadow: 0 7px 14px rgba(0, 255, 255, 0.3);
+            }
+
+            button:hover {
+                transform: translateY(-2px) scale(1.03);
+                box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4);
+            }
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        button {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--bg-color);
+            border: none;
+            padding: clamp(10px, 2vw, 15px) clamp(20px, 3.5vw, 30px);
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: clamp(0.8em, 1.5vw, 1em);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 7px 14px rgba(0, 255, 255, 0.3);
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .error {
+            color: var(--accent-color);
+            background-color: rgba(255, 0, 255, 0.1);
+            padding: 10px;
+            border-radius: 7px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: clamp(11px, 1.5vw, 13px);
+        }
+
+        .input-container {
+            margin-bottom: clamp(15px, 2vw, 20px);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: clamp(8px, 1.5vw, 10px);
+            border-radius: 7px;
+            background-color: rgba(30, 55, 153, 0.2);
+            border: 1.5px solid rgba(0, 255, 255, 0.1);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+            font-size: clamp(12px, 1.5vw, 14px);
+            box-sizing: border-box;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 7px rgba(0, 255, 255, 0.3);
+        }
+
+        textarea.input-field {
+            min-height: clamp(60px, 10vw, 80px);
+            resize: vertical;
+        }
+
+        .input-label {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: clamp(12px, 1.5vw, 14px);
+        }
+
+        .file-list {
+            margin-top: 7px;
+            padding: 7px;
+            border-radius: 7px;
+            background-color: rgba(30, 55, 153, 0.1);
+        }
+        
+        .file-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            padding: 6px 10px;
+            margin: 5px 0;
+            background-color: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: clamp(11px, 1.3vw, 13px);
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .file-item:hover {
+            background-color: rgba(0, 255, 255, 0.1);
+            border-color: rgba(0, 255, 255, 0.2);
+        }
+
+        .file-item span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .remove-file {
+            color: var(--accent-color);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 6px;
+            background-color: rgba(255, 0, 255, 0.05);
+            border: 1px solid rgba(255, 0, 255, 0.1);
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+        }
+        .remove-file:hover {
+            background-color: rgba(255, 0, 255, 0.2);
+            border-color: rgba(255, 0, 255, 0.3);
+            color: #ff69b4;
+        }
+        .remove-file::before,
+        .remove-file::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-file::before {
+            transform: rotate(45deg);
+        }
+
+        .remove-file::after {
+            transform: rotate(-45deg);
+        }
+        @media (hover: hover) {
+            .remove-file:hover {
+                background-color: rgba(255, 0, 255, 0.3);
+            }
+        }
+
+        .required-field::after {
+            content: " *";
+            color: var(--accent-color);
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 92%;
+                padding: 10px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            .container {
+                width: 85%;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                width: 80%;
+            }
+        }
+        .header-auth {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        z-index: 1000;
+        padding: 10px;
+        background: rgba(30, 55, 153, 0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 30px;
+        border: 1px solid rgba(0, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 5px 15px;
+        background: rgba(0, 255, 255, 0.05);
+        border-radius: 20px;
+        border: 1px solid rgba(0, 255, 255, 0.1);
+    }
+
+    .username {
+        color: var(--primary-color);
+        font-size: 14px;
+        font-weight: 500;
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    }
+
+    .cookie-count {
+        color: var(--accent-color);
+        font-size: 14px;
+        font-weight: bold;
+        padding: 3px 8px;
+        background: rgba(255, 0, 255, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 0, 255, 0.2);
+    }
+
+    .auth-button {
+        padding: 8px 18px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, 
+            rgba(0, 255, 255, 0.1) 0%,
+            rgba(255, 0, 255, 0.1) 100%);
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100px;
+        backdrop-filter: blur(5px);
+    }
+
+    .auth-button:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg,
+            rgba(0, 255, 255, 0.2) 0%,
+            rgba(255, 0, 255, 0.2) 100%);
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    }
+
+    .auth-button.login {
+        background: linear-gradient(135deg, 
+            rgba(0, 255, 255, 0.15) 0%,
+            rgba(30, 55, 153, 0.15) 100%);
+    }
+
+    .auth-button.register {
+        background: linear-gradient(135deg, 
+            rgba(255, 0, 255, 0.15) 0%,
+            rgba(30, 55, 153, 0.15) 100%);
+    }
+
+    .auth-button.logout {
+        background: linear-gradient(135deg, 
+            rgba(255, 0, 255, 0.1) 0%,
+            rgba(255, 0, 0, 0.1) 100%);
+    }
+
+    @media screen and (max-width: 768px) {
+        .header-auth {
+            top: 10px;
+            right: 10px;
+            padding: 8px;
+        }
+
+        .auth-button {
+            padding: 6px 14px;
+            font-size: 13px;
+            min-width: 80px;
+        }
+    }
+    .cookie-count {
+        color: var(--accent-color);
+        font-size: 14px;
+        font-weight: bold;
+        padding: 3px 8px;
+        background: rgba(255, 0, 255, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 0, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .cookie-count:hover {
+        background: rgba(255, 0, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 0, 255, 0.2);
+    }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HJ9VX2D1J"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1HJ9VX2D1J');
+    </script>
+</head>
+<body>
+    <div class="header-auth">
+        {% if user.is_authenticated %}
+            <div class="user-info">
+                <span class="username">{{ user.username }}</span>
+                <a href="{% url 'cookie_store' %}" class="cookie-count" style="text-decoration: none; cursor: pointer;">🍪 {{ user.cookie_count }}</a>
+            </div>
+            <a href="{% url 'logout' %}" class="auth-button logout">로그아웃</a>
+        {% else %}
+            <div style="display: flex; gap: 10px;">
+                <a href="{% url 'login' %}" class="auth-button login">로그인</a>
+                <a href="{% url 'register' %}" class="auth-button register">회원가입</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="container">
+        <h1 class="glow">AI README Generator</h1>
+        
+        <div class="card">
+            <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-container">
+                    <label for="project-title" class="input-label required-field">프로젝트 제목 (필수)</label>
+                    <input type="text" id="project-title" name="project_title" class="input-field" required
+                           placeholder="ex. AI 기반 README 생성기"
+                           value="{{ previous_data.project_title|default:'' }}">
+                </div>
+                
+                <div class="input-container">
+                    <label for="project-description" class="input-label">프로젝트 설명</label>
+                    <textarea id="project-description" name="project_description" class="input-field"
+                              placeholder="ex. 이 프로젝트는 인공지능을 활용하여 소스코드를 분석하고 자동으로 README 문서를 생성하는 웹 애플리케이션입니다.">{{ previous_data.project_description|default:'' }}</textarea>
+                </div>
+
+                <div class="file-input-container">
+                    <label for="source-code" class="file-input-label">코드 파일 첨부 (필수) <span style="color: var(--accent-color)">*</span></label>
+                    <input type="file" id="source-code" name="source_code" multiple required
+                           onchange="handleFileSelect(this, 'source-code-list')">
+                    <div id="source-code-list" class="file-list"></div>
+                </div>
+
+                <div class="file-input-container">
+                    <label for="presentation" class="file-input-label"> 프로젝트 관련 문서 자료 첨부 (PDF) </label>
+                    <input type="file" id="presentation" name="presentation" accept=".pdf" multiple 
+                           onchange="handleFileSelect(this, 'presentation-list')">
+                    <div id="presentation-list" class="file-list"></div>
+                </div>
+
+                <button type="submit">Generate README</button>
+            </form>
+        </div>
+
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+
+    {% csrf_token %}
+    <script src="/myapp/tracking.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            trackButtonClick('generate_readme');
+        });
+    </script>
+
+    <script>
+        let sourceCodeFiles = new DataTransfer();
+        let presentationFiles = new DataTransfer();
+
+        function handleFileSelect(input, listId) {
+            const fileStorage = input.id === 'source-code' ? sourceCodeFiles : presentationFiles;
+            const newFiles = input.files;
+            
+            Array.from(newFiles).forEach(file => {
+                fileStorage.items.add(file);
+            });
+            
+            input.files = fileStorage.files;
+            
+            updateFileList(input, document.getElementById(listId));
+        }
+
+        function updateFileList(input, fileList) {
+            fileList.innerHTML = '';
+            
+            Array.from(input.files).forEach((file, index) => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <span>${file.name}</span>
+                    <button type="button" class="remove-file" title="파일 삭제" 
+                            onclick="removeFile(${index}, '${input.id}', '${fileList.id}')">
+                    </button>
+                `;
+                fileList.appendChild(fileItem);
+            });
+        }
+
+        function removeFile(index, inputId, listId) {
+            const input = document.getElementById(inputId);
+            const fileStorage = inputId === 'source-code' ? sourceCodeFiles : presentationFiles;
+            const dt = new DataTransfer();
+            
+            Array.from(input.files)
+                .filter((_, i) => i !== index)
+                .forEach(file => dt.items.add(file));
+            
+            if (inputId === 'source-code') {
+                sourceCodeFiles = dt;
+            } else {
+                presentationFiles = dt;
+            }
+            
+            input.files = dt.files;
+            
+            updateFileList(input, document.getElementById(listId));
+        }
+        
+    </script>
+    {% csrf_token %}
+    <script src="/myapp/tracking.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            trackAIGeneratorAction('generate_readme');
+        });
+    </script>
+</body>
+</html>
+
+<!-- yep -->

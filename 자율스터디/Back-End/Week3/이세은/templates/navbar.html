@@ -1,0 +1,28 @@
+<!-- 내비게이션바
+ navbar-expand-lg: 화면 크기가 큰 장치에서는 네비게이션 바가 항상 확장
+ navbar-light: 네비게이션 바의 텍스트 색상을 밝게
+ bg-light: 배경색을 밝은 색 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <a class="navbar-brand" href="{% url 'pybo:index' %}">Pybo</a>
+
+    <!-- navbar-toggler ml-auto: 네비게이션 바가 축소되었을 때 토글 버튼을 표시
+     data-target: 토글 버튼이 클릭될 때 토글할 대상 요소의 ID
+     aria-controls: 토글 버튼이 제어하는 요소의 ID
+     aria-expanded="false": 네비게이션 바가 기본적으로 축소되어 있음 -->
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <!-- 햄버거 메뉴 버튼 -->
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- collapse: 축소 가능한 요소임
+      flex-grow-0: Flexbox에서 이 요소가 공간을 차지하지 않음 -->
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">로그인</a>
+            </li>
+        </ul>
+    </div>
+</nav>

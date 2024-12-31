@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  directUrl         = env("DIRECT_URL")
+}
+
+enum Role {
+  user
+  system
+}
+
+model User {
+  id          String     @id @default(uuid())
+  email       String     @unique
+  password    String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  chatRooms   ChatRoom[]
+  archivedMessages ArchivedMessage[]
+
+}
+
+model ChatRoom {
+  id          String     @id @default(uuid()) 
+  name        String     @default("New Chat Room") 
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  isNameUpdated Boolean    @default(false)
+
+  userId      String     
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  messages    Message[]  
+}
+
+model Message {
+  id          String     @id @default(uuid())
+  role        Role
+  content     String     @db.Text
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  chatroomId  String    
+  userId      String
+
+  chatRoom    ChatRoom   @relation(fields: [chatroomId], references: [id], onDelete: Cascade) 
+
+
+  @@index([chatroomId])
+}
+
+model ArchivedMessage {
+  id          String     @id @default(uuid())
+  content     String     @db.Text
+  createdAt   DateTime   @default(now())
+
+  chatroomId  String    
+  chatroomName String   
+
+  userId     String
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([chatroomId])
+}

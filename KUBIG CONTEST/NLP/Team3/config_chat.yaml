@@ -1,0 +1,7 @@
+max_length:
+max_new_tokens: 40  # 입력 프롬프트의 길이를 무시하고 새로 생성할 최대 토큰 수
+do_sample: True
+top_p: 0.95
+top_k: 150
+temperature: 0.7
+repetition_penalty: 1.2

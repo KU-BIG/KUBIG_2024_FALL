@@ -1,0 +1,5 @@
+.comment {
+    <!-- 상단에 점선 추가 -->
+    border-top: dotted 1px #ddd;
+    font-size: 0.7em;
+}

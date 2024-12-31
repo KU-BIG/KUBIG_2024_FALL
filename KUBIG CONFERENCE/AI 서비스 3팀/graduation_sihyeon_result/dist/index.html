@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY SNAP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/graduation/filter/result/static/style.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="slide__bg" style="--bg: url(https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/graduate.png); --dir: 0" data-current></div>
+  <div class="profile-card js-profile-card">
+    <div class="profile-card__img">
+      <img src="/graduation/sihyeon/result/static/profile/_girinee.jpg" alt="profile card" class="profile-photo">
+    </div>
+
+    <div class="profile-card__name">
+      <span class="profile-name">Loading...</span>
+      <a href="https://www.instagram.com/" class="profile-card-social__item instagram profile-card__social-icon" target="_blank">
+        <span class="icon-font">
+          <svg class="icon"><use xlink:href="#icon-instagram"></use></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="profile-card-inf">
+      <div class="profile-card-inf__item">
+        <div class="profile-card-inf__title">-</div>
+        <div class="profile-card-inf__txt">Followers</div>
+      </div>
+
+      <div class="profile-card-inf__item">
+        <div class="profile-card-inf__title">-</div>
+        <div class="profile-card-inf__txt">Following</div>
+      </div>
+
+      <div class="profile-card-inf__item">
+        <div class="profile-card-inf__title">-</div>
+        <div class="profile-card-inf__txt">Works</div>
+      </div>
+    </div>
+    
+    <div class="profile-card__txt">
+      <span class="recommendation-reason">Loading recommendation...</span>
+    </div>
+    
+    <div class="photo-gallery">
+      <img src="/graduation/filter/result/static/graduation_image/_girinee_01.jpg" alt="Graduation photo" class="gallery-photo">
+    </div>
+  </div>
+</div>
+
+<script>
+  // 쿼리 파라미터 읽기
+  const params = new URLSearchParams(window.location.search);
+
+  // 각 데이터 추출
+  const name = params.get("name") || "Unknown";
+  const followers = params.get("팔로워수") || "-";
+  const following = params.get("팔로잉수") || "-";
+  const works = params.get("게시물수") || "-";
+  const recommendationReason = params.get("recommendation_reason") || "추천 이유를 불러올 수 없습니다.";
+  const profileImage = params.get("profile_image") || "_hwangak.jpg";
+  const galleryImage = params.get("gallery_image") || "_hwangak_01.jpg";
+  const instagramUsername = params.get("instagram") || "";
+
+  // 페이지에 데이터 반영
+  document.querySelector(".profile-photo").src = `/graduation/filter/result/static/profile/${profileImage}`;
+  document.querySelector(".profile-photo").alt = `${name}'s profile photo`;
+
+  document.querySelector(".profile-name").textContent = name;
+  document.querySelector(".instagram").href = `https://www.instagram.com/${instagramUsername}`;
+
+  document.querySelector(".profile-card-inf__item:nth-child(1) .profile-card-inf__title").textContent = followers;
+  document.querySelector(".profile-card-inf__item:nth-child(2) .profile-card-inf__title").textContent = following;
+  document.querySelector(".profile-card-inf__item:nth-child(3) .profile-card-inf__title").textContent = works;
+
+  document.querySelector(".recommendation-reason").textContent = recommendationReason;
+
+  document.querySelector(".gallery-photo").src = `/graduation/filter/result/static/graduation_image/${galleryImage}`;
+</script>
+
+<svg hidden="hidden">
+  <defs>
+    <symbol id="icon-instagram" viewBox="0 0 32 32">
+      <title>instagram</title>
+      <path d="..."></path>
+    </symbol>
+  </defs>
+</svg>
+<script src="/graduation/sihyeon/result/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+base_model: "skt/kogpt2-base-v2"  # kogpt2 모델 (파인튜닝 X)
+output_dir: "/content/drive/MyDrive/KUBIG Contest/results"  # The output directory where the model predictions and checkpoints will be written.
+overwrite_output_dir: True  # overwrite the content of the output directory
+
+logging_dir: "/content/drive/MyDrive/KUBIG Contest/logs"  # 훈련 중 로깅 정보를 저장할 디렉토리
+logging_strategy: "steps"  # default
+logging_steps: 200  # 로그를 기록할 빈도
+
+fp16: True  # 훈련에 16비트 부동소수점을 사용
+
+save_strategy: "steps"  # default
+save_steps: 10000  # 몇 스텝마다 모델을 저장할지
+save_total_limit: 3  # 저장할 체크포인트의 최대 개수. 초과하는 경우 오래된 체크포인트는 삭제됨.
+
+
+num_train_epochs: 13  # total number of training epochs
+per_device_train_batch_size: 32  # batch size per device during training
+per_device_eval_batch_size: 32  # batch size per device during evaluation
+learning_rate: 5e-7  # initial learning rate / until epoch 8: 5e-5(default). / until epoch 10: 5e-6
+weight_decay: 0.01 
+warmup_ratio: 0  # until epoch 10: 0.1
+
+seed: 42

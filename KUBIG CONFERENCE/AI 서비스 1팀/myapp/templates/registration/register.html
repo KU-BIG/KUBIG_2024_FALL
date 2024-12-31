@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - AI README Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --primary-color: #00ffff;
+            --secondary-color: #1e3799;
+            --text-color: #ffffff;
+            --accent-color: #ff00ff;
+        }
+        
+        body, html {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 20%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 95%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            font-size: clamp(1.5em, 3.5vw, 2.7em);
+            margin-bottom: 25px;
+            text-shadow: 0 0 7px var(--primary-color), 0 0 14px var(--primary-color);
+        }
+
+        .auth-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(30, 55, 153, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(7px);
+            border: 1.5px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .auth-form p {
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-form label {
+            display: block;
+            margin-bottom: 0.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .auth-form input[type="text"],
+        .auth-form input[type="password"],
+        .auth-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 7px;
+            background-color: rgba(30, 55, 153, 0.2);
+            border: 1.5px solid rgba(0, 255, 255, 0.1);
+            color: var(--text-color);
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .auth-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 7px rgba(0, 255, 255, 0.3);
+        }
+
+        .auth-form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 0.5rem;
+            border-radius: 25px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border: none;
+            color: var(--bg-color);
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .auth-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(0, 255, 255, 0.3);
+        }
+
+        .auth-links {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .auth-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .auth-links a:hover {
+            color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+
+        .errorlist {
+            color: var(--accent-color);
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+            font-size: 14px;
+        }
+
+        .help-text {
+            color: var(--primary-color);
+            font-size: 12px;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .form-field {
+            margin-bottom: 1.875rem;
+        }
+
+        /* 추가적인 input 스타일링 */
+        .auth-form input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .auth-form input:-webkit-autofill,
+        .auth-form input:-webkit-autofill:hover,
+        .auth-form input:-webkit-autofill:focus {
+            -webkit-text-fill-color: var(--text-color);
+            -webkit-box-shadow: 0 0 0px 1000px rgba(30, 55, 153, 0.2) inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+        .bonus-text {
+            color: var(--text-color);
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .cookie-icon {
+            margin-right: 5px;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <div class="auth-form">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-field">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                    <div class="help-text">{{ field.help_text }}</div>
+                    {% endif %}
+                    {% if field.errors %}
+                    <ul class="errorlist">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% if next %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                {% endif %}
+                <button type="submit">회원가입</button>
+            </form>
+            <div class="auth-links">
+                <p>기존에 회원가입을 하셨나요? <a href="{% url 'login' %}?next={{ next|urlencode }}">로그인</a></p>
+                <p class="bonus-text">
+                    <i class="cookie-icon">🍪</i> 회원가입시 무료 2회 이용 쿠키를 드려요!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

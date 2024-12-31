@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h5 class="my-3 border-bottom pb-2">질문 등록</h5>
+
+    <!--
+    form의 get 방식: URL 주소에 폼 데이터를 추가하여 서버로 전달 ex) URL?name=value&name=value&...
+    form의 post 방식: 폼 데이터를 별도로 첨부하여 서버로 전달 -->
+    <form method="post" class="post-form my-3">
+        {% csrf_token %}
+
+        <!-- subject, content에 값을 입력할 수 있는 HTML 코드를 자동으로 만들어줌
+        {{ form.as_p }} -->
+
+        <!-- 오류 표시 -->
+        {% if form.errors %}
+            <!-- 빨간색 경고 박스. role로 경고 메시지임을 명시 -->
+            <div class="alert alert-danger" role="alert">
+                {% for field in form %}
+                    {% if field.errors %}
+                        <strong>{{ field.label }}</strong>
+                        {{ field.errors }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="subject">제목</label>
+            <!-- input: 단일 줄 입력 필드에 사용. 내용은 input 태그의 value 속성 안에 직접 포함됨 -->
+            <input type="text" class="form-control" name="subject" id="subject"
+                   value="{{ form.subject.value|default_if_none:'' }}">
+        </div>
+
+        <div class="form-group">
+            <label for="content">내용</label>
+            <!-- textarea: 여러 줄의 텍스트 입력 필드에 사용. 값은 textarea 시작 태그와 종료 태그 사이에 포함됨 -->
+            <textarea class="form-control" name="content" id="content" rows="10">
+                {{ form.content.value|default_if_none:'' }}
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">저장하기</button>
+    </form>
+</div>
+
+{% endblock %}
+
