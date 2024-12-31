@@ -15,6 +15,7 @@
 
 ### RAG(Retrieval-Augmented Generation)
 <img width="939" alt="스크린샷 2024-12-31 오전 11 34 40" src="https://github.com/user-attachments/assets/4c5d8953-0c4a-4da5-896e-f4b179cec009" />
+
 - vectorDB: Chroma
 - retriever: Parent-Document Retriever, Multi-Query Retriever
 - Embedding 및 LLM 생성 모델: Upstage의 solar-passage, chatUpstage 사용
