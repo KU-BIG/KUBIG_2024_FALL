@@ -1,0 +1,15 @@
+transformers
+torch
+
+streamlit
+python-dotenv
+langchain
+langchain-upstage
+langchain-chroma
+langchain-core
+chromadb
+
+langchain-community
+
+uuid
+python-dotenv

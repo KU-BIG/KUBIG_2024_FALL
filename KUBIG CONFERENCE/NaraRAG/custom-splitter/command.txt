@@ -1,0 +1,8 @@
+with streamlit (app-proto.py): 
+python -m streamlit run app.py
+
+just backend: 
+python -m uvicorn app:app --reload
+
+
+
