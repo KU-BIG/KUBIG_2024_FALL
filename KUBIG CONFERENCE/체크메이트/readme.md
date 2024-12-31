@@ -24,7 +24,7 @@ LLM API를 활용하여 부동산 계약서의 내용을 친절하게 설명하�
 
 아래 링크를 통해 이용할 수 있습니다. 
 
-https://checkmate.streamlit.app
+### https://checkmate.streamlit.app
 
 
 
@@ -52,3 +52,12 @@ https://checkmate.streamlit.app
 사전에 수집된 용어 DB를 활용해 사용자에게 어려운 용어에 대한 설명을 제공합니다.
 
 DB에 없는 용어에 대해서도, LangChain 에이전트가 직접 검색한 정보를 바탕으로 사용자에게 쉽게 설명합니다.
+
+
+# 파일 설명 
+---
+### `Full_Code_final.ipynb`
+이 파일은 프로젝트의 최종 코드로, 전체적인 기능 구현 과정을 포함하고 있습니다.
+
+### `특약사항 추천.ipynb
+이 파일은 대회 수상 이후 피드백을 거쳐 만든 기능인 특약사항 추천 구현 과정을 포함하고 있습니다.
