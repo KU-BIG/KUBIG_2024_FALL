@@ -17,6 +17,13 @@
 
 ## Modeling
 
-##### 일기 태그 추출 
+##### 일기 태그 추출 Tagging
 - OpenAI 활용
-- 키워드 3개, 감정 3개 추출 
+- 키워드 3개, 감정 3개 추출
+
+##### 벡터화 Word Embedding
+- fastText Korean Pretrained Model 활용 
+- 유사 단어 검색, 가사-태그리스트 벡터화
+
+##### 취향 필터링 Filtering
+- 장르, 대중성, 최신가요 선호도의 정보를 받아 1차 곡 필터링
