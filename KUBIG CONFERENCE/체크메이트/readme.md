@@ -2,7 +2,7 @@
 
 **전세/월세 사기계약 방지를 위한 부동산계약서 검토-분석 서비스**
 
-**명품인재 x 업스테이지 LLM Innovators Challenge 입상**
+**명품인재 x 업스테이지 LLM Innovators Challenge 제출**
 
 
 # 프로젝트 개요
