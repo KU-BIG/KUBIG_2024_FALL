@@ -17,12 +17,6 @@
 
 ## Modeling
 
-##### 일기 태그 추출 
-- Solar LLM 활용
-- 키워드 3개, 감정 3개 추출 
-
-## Modeling
-
 ##### 일기 태그 추출 Tagging
 - OpenAI 활용
 - 키워드 3개, 감정 3개 추출
