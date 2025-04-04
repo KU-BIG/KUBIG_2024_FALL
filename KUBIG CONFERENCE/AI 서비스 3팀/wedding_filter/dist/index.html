@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY SNAP</title>
+  <link rel="stylesheet" href="/wedding/filter/static/style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<style>
+  @font-face {
+      font-family: 'GowunDodum-Regular';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+  
+  #shooting-angle-select, 
+  #person-count-select, 
+  #shooting-angle-select option, 
+  #person-count-select option {
+      font-family: 'GowunDodum-Regular', sans-serif;
+  }
+  
+  p {
+      font-family: 'GowunDodum-Regular', sans-serif;
+      font-size: 18px;
+  }
+
+  .warning {
+      color: red;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 5px;
+  }
+</style>
+  
+<div id="form-main">
+  <div class="slide__bg" style="--bg: url(https://raw.githubusercontent.com/yuujinnn/ai-service-snap/main/weddings.png); --dir: 0" data-current></div>
+
+  <div id="form-div">
+    <form class="form" id="form1" action="/wedding/filter/result" method="GET" onsubmit="return validateForm()">
+      <div id="shooting-angle">
+        <p style="color: white;">촬영 구도 선택:</p>
+        <select name="shooting-angle" class="feedback-input" id="shooting-angle-select">
+          <option value="" disabled selected>촬영 구도를 선택하세요</option>
+          <option value="전신샷">전신샷</option>
+          <option value="반신샷">반신샷</option>
+          <option value="근접샷">근접샷</option>
+        </select>
+        <p id="shooting-angle-warning" class="warning" style="display:none;">촬영 구도를 선택해주세요!</p>
+      </div>
+      
+      <div id="person-count">
+        <p style="color: white;">인원 수 선택:</p>
+        <select name="person-count" class="feedback-input" id="person-count-select">
+          <option value="" disabled selected>인원 수를 선택하세요</option>
+          <option value="1명">1명</option>
+          <option value="2명">2명</option>
+          <option value="3명 이상">3명 이상</option>
+        </select>
+        <p id="person-count-warning" class="warning" style="display:none;">인원 수를 선택해주세요!</p>
+      </div>
+
+      <p class="text">
+        <textarea name="text" class="validate[required,length[2,300]] feedback-input" id="comment" placeholder="추가적으로 원하는 사진의 느낌을 입력하세요"></textarea>
+        <p id="comment-warning" class="warning" style="display:none;">추가 내용을 입력해주세요!</p>
+      </p>
+
+      <div class="submit">
+        <input type="submit" value="Recommend" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function validateForm() {
+    let isValid = true;
+
+    // Get input fields
+    const shootingAngle = document.getElementById("shooting-angle-select").value;
+    const personCount = document.getElementById("person-count-select").value;
+    const comment = document.getElementById("comment").value;
+
+    // Get warning elements
+    const shootingAngleWarning = document.getElementById("shooting-angle-warning");
+    const personCountWarning = document.getElementById("person-count-warning");
+    const commentWarning = document.getElementById("comment-warning");
+
+    // Reset warnings
+    shootingAngleWarning.style.display = "none";
+    personCountWarning.style.display = "none";
+    commentWarning.style.display = "none";
+
+    // Validate Shooting Angle
+    if (!shootingAngle) {
+      shootingAngleWarning.style.display = "block";
+      isValid = false;
+    }
+
+    // Validate Person Count
+    if (!personCount) {
+      personCountWarning.style.display = "block";
+      isValid = false;
+    }
+
+    // Validate Comment
+    if (!comment.trim()) {
+      commentWarning.style.display = "block";
+      isValid = false;
+    }
+
+    // Prevent form submission if invalid
+    return isValid;
+  }
+</script>
+
+</body>
+</html>
